@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Dancing+Script:500,600&display=swap');
+        
+        hr {
+            width: 85%;
+            border: 1px solid black;
+        }
+
+        body {
+            margin: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            text-align: center;
+            font-family: "Dancing Script", cursive;
+        }
+        div.container {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: auto auto auto;
+
+
+            page-break-after: always;
+            page-break-before: always;
+            height: 100%;
+            width: 100%;
+        }
+
+        .up {grid-row: 1 / 1; border-bottom: 1px dashed silver ;}
+        .middle {grid-row: 2 / 2; border-top: 1px dashed silver; border-bottom: 1px dashed silver;}
+        .down {grid-row: 3 / 3; border-top: 1px dashed silver;}
+        
+        .left {grid-column: 1 / 1;border-right: 1px dashed silver;}
+        .right {grid-column: 2 / 2;border-left: 1px dashed silver;}
+
+        .card {
+            width: 100%;
+            height: 100%;
+        }
+        .front, .back {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .back {
+            transform: rotate(180deg);
+            font-size: 70%;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+
+</body>
+<script>
+    function createPage(foo) {
+        element = document.createElement("div")
+        element.className = "container"
+        console.log(element)
+        element.innerHTML = '<div class="card up left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[0]+'</h1><hr></div></div><div class="card up right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[1]+'</h1><hr></div></div><div class="card middle left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[2]+'</h1><hr></div></div><div class="card middle right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[3]+'</h1><hr></div></div><div class="card down left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[4]+'</h1><hr></div></div><div class="card down right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[5]+'</h1><hr></div></div>'
+        return element
+    }
+    var names = `Adrian Barański
+Kuba Belzyt
+Maciej Bombiński
+Adrian Bratuś
+Gabriel Bukat
+Dalila Chetouane
+Marcin Chodyra
+Adam Cygan
+Konrad Ćwiek
+Patryk Jacak
+Cezary Kaźmierczak
+Michał Kądziołka
+Ola Kruk
+Mateusz Ksok
+Kuba Kulik
+Halina Labriga
+Michał Majchrzak
+Piotr Masny
+Marcin Miszkurka
+Bartek Papis
+Mateusz Płochocki
+Maciej Poncyleusz
+Mateusz Przybył
+Szymon Rękawek
+Sebastian Siemiński
+Kamil Sitarz
+Jan Skrzeczkowski
+Kacper Święch
+Kacper Waliszewski
+Patryk Zawadka
+Michał Zawłocki`
+
+    var arrayOfLines = names.split("\n");
+    console.log(arrayOfLines)
+    var i;
+    var boo = []
+    arrayOfLines.forEach((elem) => {
+        boo.push(elem)
+        console.log(boo)
+        if (boo.length == 6) {
+            document.body.appendChild(createPage(boo))
+            boo = []
+        }
+        
+    })
+    if (boo.length > 0) {
+        boo[5] = "Osoba Towarzysząca"
+        
+        document.body.appendChild(createPage(Array.from(boo, i => i || "Osoba Towarzysząca")))
+    } 
+    
+</script>
+</html>
