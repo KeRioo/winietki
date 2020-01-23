@@ -8,10 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Dancing+Script:500,600&display=swap');
         
-        hr {
-            width: 85%;
-            border: 1px solid black;
-        }
+        
 
         body {
             margin: 0;
@@ -56,6 +53,19 @@
             transform: rotate(180deg);
             font-size: 70%;
         }
+        .back h1 {
+            margin: 100px 0 0 0 ;
+        }
+
+        .linia {
+            width: 100%;
+            
+            
+        }
+
+        .front h1 {
+            margin: 7px;
+        }
 
     </style>
 
@@ -69,40 +79,12 @@
         element = document.createElement("div")
         element.className = "container"
         console.log(element)
-        element.innerHTML = '<div class="card up left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[0]+'</h1><hr></div></div><div class="card up right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[1]+'</h1><hr></div></div><div class="card middle left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[2]+'</h1><hr></div></div><div class="card middle right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[3]+'</h1><hr></div></div><div class="card down left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[4]+'</h1><hr></div></div><div class="card down right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><hr><h1>'+foo[5]+'</h1><hr></div></div>'
+        element.innerHTML = '<div class="card up left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><img class="linia" src="linia-ozdobna.png"><h1>'+foo[0]+'</h1><img class="linia" src="linia-ozdobna.png"></div></div><div class="card up right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><img class="linia" src="linia-ozdobna.png"><h1>'+foo[1]+'</h1><img class="linia" src="linia-ozdobna.png"></div></div><div class="card middle left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><img class="linia" src="linia-ozdobna.png"><h1>'+foo[2]+'</h1><img class="linia" src="linia-ozdobna.png"></div></div><div class="card middle right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><img class="linia" src="linia-ozdobna.png"><h1>'+foo[3]+'</h1><img class="linia" src="linia-ozdobna.png"></div></div><div class="card down left"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><img class="linia" src="linia-ozdobna.png"><h1>'+foo[4]+'</h1><img class="linia" src="linia-ozdobna.png"></div></div><div class="card down right"><div class="back"><h1>Studniówka 2020</h1></div><div class="front"><img class="linia" src="linia-ozdobna.png"><h1>'+foo[5]+'</h1><img class="linia" src="linia-ozdobna.png"></div></div>'
         return element
     }
-    var names = `Adrian Barański
-Kuba Belzyt
-Maciej Bombiński
-Adrian Bratuś
-Gabriel Bukat
-Dalila Chetouane
-Marcin Chodyra
-Adam Cygan
-Konrad Ćwiek
-Patryk Jacak
-Cezary Kaźmierczak
-Michał Kądziołka
-Ola Kruk
-Mateusz Ksok
-Kuba Kulik
-Halina Labriga
-Michał Majchrzak
-Piotr Masny
-Marcin Miszkurka
-Bartek Papis
-Mateusz Płochocki
-Maciej Poncyleusz
-Mateusz Przybył
-Szymon Rękawek
-Sebastian Siemiński
-Kamil Sitarz
-Jan Skrzeczkowski
-Kacper Święch
-Kacper Waliszewski
-Patryk Zawadka
-Michał Zawłocki`
+
+    
+    var names = ``
 
     var arrayOfLines = names.split("\n");
     console.log(arrayOfLines)
